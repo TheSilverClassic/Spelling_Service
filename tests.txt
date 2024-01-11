@@ -1,0 +1,20 @@
+xcanary test
+xprocesstext takes an empty string and returns an empty string
+xprocesstext takes "hello" and returns "hello"
+xprocesstext takes "blah" which we'll consider to have incorrect spelling and returns "[blah]"
+xprocesstext takes "hello there" and returns "hello there"
+xprocesstext takes "hello tyop" and returns "hello [tyop]"
+xprocesstext takes "hello misp" and returns "hello [misp]"
+xprocesstext takes "hello tyop there misp" and returns "hello [tyop] there [misp]"
+xprocesstext takes text with two lines and returns text with two lines
+xprocesstext takes text with two lines with some incorrect spelling words and returns appropriate result
+xprocesstext takes text with three lines and returns text with three lines
+xprocesstext takes text with three lines with some incorrect spelling words and returns appropriate result
+xprocesstext takes text "hello there how aare you" but runs into an exception from the spellchecker when looking up spelling for there
+xprocesstext takes text "hello there hwo aare you" but runs into an exception from the spellchecker when looking up spelling for there and aare, and determined that hwo is a wrong spelling.
+xprocesstext takes text with three lines having multiple spelling mistakes and also runs into exception from the spell checker for some words.
+xgetResponse takes a word and returns a response (a text of length > 0) from the webservice for spellchecker
+xparseText takes "true" and return true (boolean)
+xparseText takes "false" and return false (boolean)
+xspell_check pass the given word to getResponse, passes the response from it to parseText, and returns the response from parseText
+xspell_check throws an exception when getResponse throws an exception
